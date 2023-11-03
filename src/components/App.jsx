@@ -27,9 +27,7 @@ export const App = ({ openModal }) => {
           Notify.failure(
             'Sorry, there are no images matching your search query. Please try again.'
           );
-        }
-
-        if (page === 1) {
+        } else if (page === 1) {
           Notify.success(`Hooray! We found: ${totalHits} images.`);
         }
 
@@ -49,6 +47,7 @@ export const App = ({ openModal }) => {
     setQuery(newSearchQuery);
     setPage(1);
     setImages([]);
+    setError(null);
   };
 
   const onLoadMore = () => {
