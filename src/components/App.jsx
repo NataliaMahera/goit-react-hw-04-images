@@ -29,6 +29,10 @@ export const App = ({ openModal }) => {
           );
         }
 
+        if (page === 1) {
+          Notify.success(`Hooray! We found: ${totalHits} images.`);
+        }
+
         setImages(prevImages => [...prevImages, ...hits]);
         setTotalPages(Math.ceil(totalHits / 12));
       } catch {
